@@ -1,3 +1,35 @@
 "use strict";
-const a = "Hello World";
-console.log(a);
+/* 1. -------------------------- Type Basics -------------------------- */
+/* #Variable */
+let intro = "Riyad";
+// intro = 22 -(Can't be decleare another data type)
+intro = "Jobayer";
+let someone; // let someone;
+someone = "Someone";
+someone = 17;
+/* #Array */
+const array = ["I", "am", "Riyad"];
+// array.push(true) -(Can't be push different data type)
+const array1 = ["hello", 143, true];
+array1.push("so");
+array1.push(3);
+// array1.push({name: "someone"}) -(Can't be push different a data type which doesn't exist)
+let array2; // let array;
+/* #Object */
+const obj = { name: "riyad", age: 22 };
+// obj.name = 22 - Can't set different data
+// obj.job = "sth" - Can't add extra field
+/* #Function */
+const myFunc = (a, b) => {
+    return `${b} with ${a}`;
+};
+// myFunc("no", true) - Can't pass another data type
+myFunc(22, "Nabil");
+/* 1. -------------------------- Explicit & Union Type -------------------------- */
+let a;
+a = "Ten";
+let array3 = [];
+array3.push(32);
+const obj1 = { name: "Riyad", age: 23 };
+obj1.name = false;
+// obj1.age = "to" - Schema defined, can't be add another data type
