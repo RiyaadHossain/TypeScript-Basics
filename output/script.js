@@ -106,3 +106,14 @@ console.log(riyad.name);
 /* 8. -------------------------- Module System -------------------------- */
 // https://www.youtube.com/watch?v=lnup-9bBCUQ&list=PLHiZ4m8vCp9PgOOjdyNpc6AoBmKNrp_u3&index=11
 console.log(demoObj.utility);
+const refayet = { name: "Refayet", roll: 1, goodStudent: true };
+class Student {
+    constructor(_name, _roll, _goodStudent) {
+        (this.name = _name), (this.roll = _roll), (this.goodStudent = _goodStudent);
+    }
+}
+let Roni;
+Roni = new Student("Roni", 22, false);
+const students = [];
+students.push(Roni);
+// students.push(riyad) - can't push this object

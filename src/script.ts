@@ -143,3 +143,29 @@ console.log(riyad.name);
 /* 8. -------------------------- Module System -------------------------- */
 // https://www.youtube.com/watch?v=lnup-9bBCUQ&list=PLHiZ4m8vCp9PgOOjdyNpc6AoBmKNrp_u3&index=11
 console.log(demoObj.utility);
+
+/* 9. -------------------------- Interfaces -------------------------- */
+// - Used for structuring an Object, Class and element of an Array
+
+interface studentInfo {
+  name: string;
+  roll: number;
+  goodStudent: boolean;
+}
+
+const refayet: studentInfo = { name: "Refayet", roll: 1, goodStudent: true };
+class Student implements studentInfo {
+  name: string;
+  roll: number;
+  goodStudent: boolean;
+  constructor(_name: string, _roll: number, _goodStudent: boolean) {
+    (this.name = _name), (this.roll = _roll), (this.goodStudent = _goodStudent);
+  }
+}
+
+let Roni: studentInfo;
+Roni = new Student("Roni", 22, false)
+
+const students: studentInfo[] = []
+students.push(Roni)
+// students.push(riyad) - can't push this object
