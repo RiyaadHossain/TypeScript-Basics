@@ -65,7 +65,7 @@ funcPattern1 = (a, b, type) => {
     }
 };
 console.log(funcPattern1(2, 5, "add"));
-/* 6. -------------------------- TypeScript on Class -------------------------- */
+/* 7. -------------------------- TypeScript on Class -------------------------- */
 class Player {
     constructor(_name, _age, _category) {
         this.name = _name;
@@ -83,7 +83,7 @@ const players = []; // An array which only takes 'Player' like object
 players.push(sakib);
 // players.push(mushi) - not accepted
 mashrafee.age = 33; // Can be access which is risky [use access modifier]
-/* 7. -------------------------- Access Modifier -------------------------- */
+/* 8. -------------------------- Access Modifier -------------------------- */
 class User {
     /* Access Modifier___________
       private name: string;
@@ -103,7 +103,7 @@ class User {
 }
 const riyad = new User("Riyad", 123, true);
 console.log(riyad.name);
-/* 8. -------------------------- Module System -------------------------- */
+/* 9. -------------------------- Module System -------------------------- */
 // https://www.youtube.com/watch?v=lnup-9bBCUQ&list=PLHiZ4m8vCp9PgOOjdyNpc6AoBmKNrp_u3&index=11
 console.log(demoObj.utility);
 const refayet = { name: "Refayet", roll: 1, goodStudent: true };
@@ -116,4 +116,26 @@ let Roni;
 Roni = new Student("Roni", 22, false);
 const students = [];
 students.push(Roni);
+students.push(refayet);
 // students.push(riyad) - can't push this object
+/* 11. -------------------------- Generics -------------------------- */
+const makePerson = (obj) => {
+    let id = Math.floor(Math.random() * 100);
+    return Object.assign({ id }, obj);
+};
+const makePerson2 = (obj) => {
+    let id = Math.floor(Math.random() * 100);
+    return Object.assign({ id }, obj);
+};
+const rakib = makePerson({ name: "Riyad", age: 22 });
+const rakib2 = makePerson2({ name: "Riyad", age: 22 });
+console.log(rakib.age);
+const apiResponse = {
+    statusCode: 200,
+    data: [],
+    status: 2 /* status.pending */ // 0, 1, 2 
+};
+console.log(apiResponse);
+/* 13. -------------------------- Tuples -------------------------- */
+const ab = [2, "String", true]; // define the data type of each index
+// ab.push(35) - not recommended

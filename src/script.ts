@@ -91,7 +91,7 @@ funcPattern1 = (a: number, b: number, type: string) => {
 
 console.log(funcPattern1(2, 5, "add"));
 
-/* 6. -------------------------- TypeScript on Class -------------------------- */
+/* 7. -------------------------- TypeScript on Class -------------------------- */
 class Player {
   // Define the property type
   name: string;
@@ -118,7 +118,7 @@ players.push(sakib);
 
 mashrafee.age = 33; // Can be access which is risky [use access modifier]
 
-/* 7. -------------------------- Access Modifier -------------------------- */
+/* 8. -------------------------- Access Modifier -------------------------- */
 class User {
   /* Access Modifier___________
     private name: string;
@@ -140,11 +140,11 @@ class User {
 const riyad = new User("Riyad", 123, true);
 console.log(riyad.name);
 
-/* 8. -------------------------- Module System -------------------------- */
+/* 9. -------------------------- Module System -------------------------- */
 // https://www.youtube.com/watch?v=lnup-9bBCUQ&list=PLHiZ4m8vCp9PgOOjdyNpc6AoBmKNrp_u3&index=11
 console.log(demoObj.utility);
 
-/* 9. -------------------------- Interfaces -------------------------- */
+/* 10. -------------------------- Interfaces -------------------------- */
 // - Used for structuring an Object, Class and element of an Array
 
 interface studentInfo {
@@ -154,6 +154,7 @@ interface studentInfo {
 }
 
 const refayet: studentInfo = { name: "Refayet", roll: 1, goodStudent: true };
+
 class Student implements studentInfo {
   name: string;
   roll: number;
@@ -168,4 +169,36 @@ Roni = new Student("Roni", 22, false)
 
 const students: studentInfo[] = []
 students.push(Roni)
+students.push(refayet)
 // students.push(riyad) - can't push this object
+
+
+/* 11. -------------------------- Generics -------------------------- */
+const makePerson = <T extends object>(obj: T) => {
+  let id = Math.floor(Math.random() * 100)
+  return {id, ...obj}
+}
+
+const makePerson2 = <T extends {name: string, age: number}>(obj: T) => {
+  let id = Math.floor(Math.random() * 100)
+  return {id, ...obj}
+}
+
+const rakib = makePerson({name: "Riyad", age: 22})
+const rakib2 = makePerson2({name: "Riyad", age: 22})
+console.log(rakib.age)
+
+/* 12. -------------------------- Enum -------------------------- */
+const enum status { success, fail, pending} // 0, 1, 2 
+
+const apiResponse = {
+  statusCode: 200,
+  data: [],
+  status: status.pending // 0, 1, 2 
+}
+
+console.log(apiResponse)
+
+/* 13. -------------------------- Tuples -------------------------- */
+const ab: [number, string, boolean] = [2, "String", true] // define the data type of each index
+// ab.push(35) - not recommended
