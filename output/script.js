@@ -25,11 +25,24 @@ const myFunc = (a, b) => {
 };
 // myFunc("no", true) - Can't pass another data type
 myFunc(22, "Nabil");
-/* 1. -------------------------- Explicit & Union Type -------------------------- */
+/* 2. -------------------------- Explicit & Union Type -------------------------- */
 let a;
 a = "Ten";
 let array3 = [];
 array3.push(32);
-const obj1 = { name: "Riyad", age: 23 };
+const obj1 = {
+    name: "Riyad",
+    age: 23,
+};
 obj1.name = false;
 // obj1.age = "to" - Schema defined, can't be add another data type
+/* 3. -------------------------- Dynamic Type -------------------------- */
+let c = [];
+let array5 = [];
+let obj2 = { name: true, age: { a: "b" } };
+/* 3. -------------------------- TypeScript on Functions -------------------------- */
+const myFunc1 = (a, b, c = "Hello TS") => {
+    console.log(c);
+    return a + b;
+};
+myFunc1(1, 2);
